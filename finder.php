@@ -18,7 +18,7 @@
                         $this->recursiveScan($file);
                     }elseif (is_file($file)) {
                         if( strpos(file_get_contents($file), $this->stringToSearch) !== false) {  
-                            $this->results[] = $file;
+                            $this->results[$file] = nl2br(file_get_contents($file));
                         }
                     }
                 }  
@@ -82,9 +82,12 @@
         <?php if($isSearched){ ?>
            <div class="mt-4 mb-4">
                 <h4>Search Results (<?=count($allResults)?> files found)</h4><hr/>
-                <?php foreach($allResults as $result){ ?>
+                <?php foreach($allResults as $file => $content){ ?>
                     <div class="card mt-2 p-2">
-                        <p><?=$result?></p>
+                        <details>
+                            <summary><?=$file?></summary>
+                            <p><pre><?=$content?></pre></p>
+                        </details>
                     </div>
                 <?php } ?>
            </div>
