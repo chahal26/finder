@@ -55,7 +55,7 @@
     <header>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">String Finder</a>
+                <a class="navbar-brand" href="#">Finder</a>
             </div>
         </nav>
     </header>
@@ -90,5 +90,8 @@
            </div>
         <?php } ?>
     </main>
+    <footer class="text-center text-muted" style="position: fixed; bottom: 0; width: 100%;">
+        <p class="">Made by <a href="https://github.com/chahal26">Sahil Chahal</a></p>
+    </footer>
 </body>
 </html>
