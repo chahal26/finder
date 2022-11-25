@@ -18,7 +18,7 @@
                         $this->recursiveScan($file);
                     }elseif (is_file($file)) {
                         if( strpos(file_get_contents($file), $this->stringToSearch) !== false) {  
-                            $this->results[$file] = nl2br(file_get_contents($file));
+                            $this->results[$file] = file_get_contents($file);
                         }
                     }
                 }  
@@ -86,7 +86,11 @@
                     <div class="card mt-2 p-2">
                         <details>
                             <summary><?=$file?></summary>
-                            <p><pre><?=$content?></pre></p>
+                            <p>
+                                <pre>
+                                    <code><?=htmlspecialchars($content)?></code>
+                                </pre>
+                            </p>
                         </details>
                     </div>
                 <?php } ?>
