@@ -88,7 +88,7 @@
                             <summary><?=$file?></summary>
                             <p>
                                 <pre>
-                                    <code><?=htmlspecialchars($content)?></code>
+                                    <code class="p-2" style="display: block; background: #232121; color: #d0c5c5; font-family: monospace, monospace;"><?=htmlspecialchars($content)?></code>
                                 </pre>
                             </p>
                         </details>
